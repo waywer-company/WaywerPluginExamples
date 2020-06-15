@@ -1,0 +1,12 @@
+{
+  "name": "name_plugin",
+  "version": "1.0.0",
+  "author" : "Author",
+  "pluginStatus" : "ACTIVE",
+  "pluginParameters": [
+    {
+      "name": "param",
+      "parameterType": "TEXT"
+    }
+  ]
+}

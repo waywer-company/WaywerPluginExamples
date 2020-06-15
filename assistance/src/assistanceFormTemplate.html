@@ -1,0 +1,18 @@
+<textarea name="textarea{{threadFlowId}}_{{element_id}}" id="textarea{{threadFlowId}}_{{element_id}}"></textarea>
+
+<script>
+    function getValue{{threadFlowId}}_{{element_id}}() {
+        return [
+            {
+                name: 'param',
+                value: $('#textarea{{threadFlowId}}_{{element_id}}').val()
+            }
+        ];
+    }
+    function getEvent{{threadFlowId}}_{{element_id}}() {
+        return {
+            event_name: 'EVENT_NAME',
+            params: []
+        };
+    }
+</script>

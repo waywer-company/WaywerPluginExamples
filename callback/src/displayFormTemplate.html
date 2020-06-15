@@ -1,0 +1,20 @@
+<button
+    id="button{{threadFlowId}}_{{element_id}}"
+    onclick="emitEvent
+            (
+                {
+                    eventName: 'EVENT_NAME',
+                    threadFlowId: '{{threadFlowId}}',
+                    elementId: '{{element_id}}',
+                    callbackFunction: true
+                }
+            )
+            "
+>
+    {{param}}
+</button>
+<script>
+    function callbackFunction{{threadFlowId}}_{{element_id}}() {
+        $('#button{{threadFlowId}}_{{element_id}}').html('new_text');
+    }
+</script>
