@@ -1,11 +1,11 @@
-<div id="file{{element_id}}">
-    <input id="addFile{{element_id}}" type="file" multiple>
+<div id="file{{threadFlowId}}_{{element_id}}">
+    <input id="addFile{{threadFlowId}}_{{element_id}}" type="file" multiple>
 </div>
 
 <script>
-    var files{{element_id}} = [];
-    function addFile{{element_id}}(data) {
-        files{{element_id}}.push(
+    var files{{threadFlowId}}_{{element_id}} = [];
+    function addFile{{threadFlowId}}_{{element_id}}(data) {
+        files{{threadFlowId}}_{{element_id}}.push(
                 {
                     id: i,
                     name: data.fileDescriptions[0].name,
@@ -17,34 +17,34 @@
         console.log(data);
     }
 
-    function getValue{{element_id}}() {
-        for(var i in files{{element_id}}){
-            approveFile(files{{element_id}}[i].hash);
+    function getValue{{threadFlowId}}_{{element_id}}() {
+        for(var i in files{{threadFlowId}}_{{element_id}}){
+            approveFile(files{{threadFlowId}}_{{element_id}}[i].hash);
         }
-        return getParams{{element_id}}();
+        return getParams{{threadFlowId}}_{{element_id}}();
     }
 
     }
-    function getParams{{element_id}}() {
+    function getParams{{threadFlowId}}_{{element_id}}() {
         var params = [];
         params.push(
                 {
                     name: 'param',
-                    value: JSON.stringify(files{{element_id}})
+                    value: JSON.stringify(files{{threadFlowId}}_{{element_id}})
                 }
         );
         return params;
     }
-    function getEvent{{element_id}}() {
+    function getEvent{{threadFlowId}}_{{element_id}}() {
         return {
             event_name: 'EVENT_NAME',
             params: []
         };
     }
-    $("#file{{element_id}} input").on("change", function (e) {
+    $("#file{{threadFlowId}}_{{element_id}} input").on("change", function (e) {
         $($(this)[0].files).each(function () {
             var upload = new Upload(this);
-            upload.uploadFile('{{element_id}}');
+            upload.uploadFile('{{threadFlowId}}_{{element_id}}');
         });
         $(this).val('');
     });
